@@ -25,5 +25,8 @@ namespace RestaurantAPO.Models
         public decimal GTotal { get; set; }
 
         public List<OrderDetail> OrderDetails { get; set; }
+
+        [NotMapped]
+        public string DeletedOrderItemIds { get; set; }
     }
 }
