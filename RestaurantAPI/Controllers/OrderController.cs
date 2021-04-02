@@ -51,16 +51,16 @@ namespace RestaurantAPO.Controllers
                                       }).ToListAsync();
 
 
-            var orderMaster = await (from master in _context.Set<OrderMaster>()
-                                     where master.OrderMasterId == id
+            var orderMaster = await (from a in _context.Set<OrderMaster>()
+                                     where a.OrderMasterId == id
 
                                      select new
                                      {
-                                         master.OrderMasterId,
-                                         master.OrderNumber,
-                                         master.CustomerId,
-                                         master.PMethod,
-                                         master.GTotal,
+                                         a.OrderMasterId,
+                                         a.OrderNumber,
+                                         a.CustomerId,
+                                         a.PMethod,
+                                         a.GTotal,
                                          deletedOrderItemIds="",
                                          orderDetails = orderDetails
                                      }).FirstOrDefaultAsync();
